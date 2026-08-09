@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(180deg, #0f0f14 0%, #181820 50%, #0f0f14 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.menu-wrap {
+  width: 100%;
+  max-width: 640px;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.world-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.world-entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: #1c1c24;
+  border: 3px solid;
+  border-color: #2e2e3a #14141a #14141a #2e2e3a;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.world-entry:hover {
+  background: #26262f;
+  border-color: #3e3e4a #1a1a22 #1a1a22 #3e3e4a;
+}
+
+.world-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid;
+  border-color: #444 #111 #111 #444;
+}
+
+.world-icon.l1 { background: #6b8f5a; }
+.world-icon.l2 { background: #5a7a8f; }
+.world-icon.l3 { background: #8f7f5a; }
+.world-icon.l4 { background: #8f5a6f; }
+.world-icon.l5 { background: #6f5a8f; }
+.world-icon.l6 { background: #5a6f8f; }
+
+.world-info {
+  flex: 1;
+}
+
+.world-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.world-desc {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.menu-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 11px;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .world-entry {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .menu-title {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up for Github</title>
+    <link rel="icon" type="image/png" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p style="padding:10px 20px;"><a href="../../index.html" style="font-size:13px;color:#57606a;text-decoration:none;">&larr; Back to Labs</a></p>
+
+    
+    <div class="form-container">
+        <div style="display: block; text-align: center;">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="100"><br>
+        </div>
+        
+        <h2>Sign Up for GitHub</h2>
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com">
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password"
+            required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}"
+            title="Must contain uppercase, lowercase, number, and not over 15 characters">
+            <span class="hint">Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter.</span>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="username">  
+            <span class="hint">Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.</span>
+
+            <label for="country">Your Country/Region</label>
+            <select id="country" name="country">
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="KH">Cambodia</option>
+            </select>
+            <span class="hint">For compliance reasons, we're required to collect country information to send you occasional updates.</span>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="terms">
+                <label for="terms" style="font-weight: normal;">
+                    Recieve occasional product updates and announcements.
+                </label>
+            </div>
+       
+            <button>Create Account ></button>
+        </form> 
+        <p class="footer-text">Already have an account? <a href="index2.html">Sign in</a></p> 
+    </div>
+
+</body>
+</html>

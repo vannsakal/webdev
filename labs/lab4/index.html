@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Lab 4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+<p style="padding:0 20px 10px;"><a href="../../index.html" style="font-size:13px;color:#57606a;text-decoration:none;">&larr; Back to Labs</a></p>
+
+
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
+
+    <h1 class="text-2xl font-bold mb-6">JavaScript Lab 4</h1>
+
+    <!-- 1. Leap Year -->
+    <div class="mb-8">
+      <h2 class="text-lg font-semibold mb-2">1. Leap Year Checker</h2>
+      <button onclick="checkLeapYear()" 
+        class="bg-blue-500 text-white px-4 py-2 rounded">
+        Check Year
+      </button>
+    </div>
+
+    <!-- 2. Join Array -->
+    <div class="mb-8">
+      <h2 class="text-lg font-semibold mb-2">2. Join Array</h2>
+      <button onclick="joinArray()" 
+        class="bg-green-500 text-white px-4 py-2 rounded">
+        Join Colors
+      </button>
+      <p id="arrayResult" class="mt-2 text-blue-600"></p>
+    </div>
+
+    <!-- 3. Greeting -->
+    <div class="mb-8">
+      <h2 class="text-lg font-semibold mb-2">3. Greeting</h2>
+      <button onclick="greetUser()" 
+        class="bg-purple-500 text-white px-4 py-2 rounded">
+        Show Greeting
+      </button>
+      <p id="greetResult" class="mt-2 text-purple-600"></p>
+    </div>
+
+    <!-- 4. Caesar Cipher -->
+    <div>
+      <h2 class="text-lg font-semibold mb-2">4. Caesar Cipher</h2>
+
+      <input type="text" id="cipherText" 
+        placeholder="Enter text"
+        class="border p-2 w-full mb-2 rounded">
+
+      <input type="number" id="shift" 
+        placeholder="Enter shift (ex: 3)"
+        class="border p-2 w-full mb-2 rounded">
+
+      <div class="space-x-2">
+        <button onclick="encrypt()" 
+          class="bg-blue-600 text-white px-4 py-2 rounded">
+          Encrypt
+        </button>
+
+        <button onclick="decrypt()" 
+          class="bg-red-500 text-white px-4 py-2 rounded">
+          Decrypt
+        </button>
+      </div>
+
+      <p class="mt-3 font-semibold">Result:</p>
+      <p id="cipherResult" class="text-indigo-600"></p>
+    </div>
+
+  </div>
+
+
+<script>
+
+// 1. Leap Year
+function checkLeapYear() {
+  let year = prompt("Enter a year:");
+
+  if (year == null || year == "") {
+    alert("No input.");
+    return;
+  }
+
+  year = parseInt(year);
+
+  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+    alert(year + " is a Leap Year");
+  } else {
+    alert(year + " is NOT a Leap Year");
+  }
+}
+
+
+// 2. Join Array
+function joinArray() {
+  let myColor = ["Red", "Green", "White", "Black"];
+  let text = "";
+
+  for (let i = 0; i < myColor.length; i++) {
+    text += myColor[i];
+
+    if (i < myColor.length - 1) {
+      text += ",";
+    }
+  }
+
+  document.getElementById("arrayResult").textContent = text;
+}
+
+
+// 3. Greeting
+function greetUser() {
+  let d = new Date();
+  let hour = d.getHours();
+  let msg = "";
+
+  if (hour < 12) {
+    msg = "Good Morning";
+  } else if (hour < 18) {
+    msg = "Good Afternoon";
+  } else {
+    msg = "Good Evening";
+  }
+
+  document.getElementById("greetResult").textContent = msg;
+}
+
+
+// 4. Encrypt
+function encrypt() {
+  let text = document.getElementById("cipherText").value;
+  let shift = parseInt(document.getElementById("shift").value);
+  let result = "";
+
+  for (let i = 0; i < text.length; i++) {
+    let ch = text[i];
+
+    if (ch >= 'A' && ch <= 'Z') {
+      let code = ch.charCodeAt(0);
+      result += String.fromCharCode((code - 65 + shift) % 26 + 65);
+    }
+    else if (ch >= 'a' && ch <= 'z') {
+      let code = ch.charCodeAt(0);
+      result += String.fromCharCode((code - 97 + shift) % 26 + 97);
+    }
+    else {
+      result += ch;
+    }
+  }
+
+  document.getElementById("cipherResult").textContent = result;
+}
+
+
+// 4. Decrypt
+function decrypt() {
+  let text = document.getElementById("cipherText").value;
+  let shift = parseInt(document.getElementById("shift").value);
+  let result = "";
+
+  for (let i = 0; i < text.length; i++) {
+    let ch = text[i];
+
+    if (ch >= 'A' && ch <= 'Z') {
+      let code = ch.charCodeAt(0);
+      result += String.fromCharCode((code - 65 - shift + 26) % 26 + 65);
+    }
+    else if (ch >= 'a' && ch <= 'z') {
+      let code = ch.charCodeAt(0);
+      result += String.fromCharCode((code - 97 - shift + 26) % 26 + 97);
+    }
+    else {
+      result += ch;
+    }
+  }
+
+  document.getElementById("cipherResult").textContent = result;
+}
+
+</script>
+
+</body>
+</html>

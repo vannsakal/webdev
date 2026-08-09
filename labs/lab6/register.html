@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register User</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="scroll-page">
+<p style="padding:10px 20px 0;max-width:640px;margin:0 auto;"><a href="../../index.html" style="font-size:13px;color:#57606a;text-decoration:none;">&larr; Back to Labs</a></p>
+
+
+  <div class="page-wrapper">
+
+    <!-- Form Card -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h1>Register User</h1>
+          <p id="welcome" class="welcome-text"></p>
+        </div>
+        <button class="btn btn-danger" onclick="logout()">Logout</button>
+      </div>
+
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="e.g. John Doe" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="e.g. john@email.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="e.g. 012 345 6789" />
+      </div>
+
+      <p id="error-msg" class="error-msg">Please fill in all fields!</p>
+
+      <div class="btn-group">
+        <button class="btn btn-clear" onclick="clearForm()">Clear</button>
+        <button class="btn btn-primary" onclick="registerUser()">Register</button>
+      </div>
+    </div>
+
+    <!-- Table Card -->
+    <div class="card table-card">
+      <h2>Registered Users</h2>
+      <p id="empty-msg" class="empty-msg">No users registered yet.</p>
+      <div class="table-wrapper">
+        <table id="users-table">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page B</title>
+</head>
+<body>
+<p style="padding:10px 20px;"><a href="index.html" style="font-size:13px;color:#57606a;text-decoration:none;">&larr; Back to Lab 5</a></p>
+
+  <h1>Page B (Malicious Page)</h1>
+  <p>This page will redirect Page A using window.opener.</p>
+
+  <script>
+    if (window.opener) {
+      window.opener.location = "E1ApageC.html";
+    }
+  </script>
+</body>
+</html>
